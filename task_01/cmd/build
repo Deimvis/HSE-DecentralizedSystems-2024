@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -ex
+
+mkdir -p bin
+OPENSSL=/opt/homebrew/Cellar/openssl@3/3.2.1
+gcc main.c -o bin/git-check -w -I$OPENSSL/include -L$OPENSSL/lib -lssl -lcrypto
